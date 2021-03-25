@@ -1,0 +1,2 @@
+# CTA-Project
+Project repository for 46887 -- COMPUTATIONAL THINKING WITH ALGORITHMS (GMIT)
