@@ -24,9 +24,11 @@ def timer_function(sort_function, array_size):
     time_elapsed_list = [] #list to track time elapsed over 10 runs
     for i in range(10):
         test_array = random_array_generator(array_size,0,1000) #generate random numbers over range of 0 to 1000
+        print(test_array)
         start_time = time.time()*1000 #start time before function called, multiplied by 1000 to convert to microseconds
         test = sort_function(test_array)
         end_time = time.time()*1000 #end time after function finished, multiplied by 1000 to convert to microseconds
+        print(test_array)
         time_elapsed = end_time - start_time #total time elapsed
         time_elapsed_list.append(time_elapsed)
     avg_time_elapsed = sum(time_elapsed_list)/len(time_elapsed_list) #get the average time elapsed
@@ -267,7 +269,7 @@ def timsort(array):
 
     #Having sorted slices of the array, merge the sorted slices
     #size doubles on each iteration until size exceeds length of the array
-    #each iteration it will merge and sort each of the slices that were sorted
+    #each iteration it will merge and sort each of the slices that were sorte
     #by insertion sort above
     size = min_run
     while size < n:
@@ -305,9 +307,11 @@ if __name__ == '__main__':
     '''
 
     bubble_avg_time_elapsed_n_100 = timer_function(bubble_sort, 100)
+    '''
     bubble_avg_time_elapsed_n_250 = timer_function(bubble_sort, 250)
     bubble_avg_time_elapsed_n_500 = timer_function(bubble_sort, 500)
     bubble_avg_time_elapsed_n_750 = timer_function(bubble_sort, 750)
+
     bubble_avg_time_elapsed_n_1000 = timer_function(bubble_sort, 1000)
     bubble_avg_time_elapsed_n_2000 = timer_function(bubble_sort, 2000)
     bubble_avg_time_elapsed_n_4000 = timer_function(bubble_sort, 4000)
@@ -316,7 +320,8 @@ if __name__ == '__main__':
     bubble_avg_time_elapsed_n_10000 = timer_function(bubble_sort, 10000)
     print(f"{'Size':<15} {'100':<12} {'250':<12} {'500':<12} {'750':<12} {'1000':<12} {'2000':<12} {'4000':<12} {'6000':<12} {'8000':<12} {'10000':<12}")
     print(f"{'Bubble Sort':<15} {bubble_avg_time_elapsed_n_100:<12} {bubble_avg_time_elapsed_n_250:<12} {bubble_avg_time_elapsed_n_500:<12} {bubble_avg_time_elapsed_n_750:<12} {bubble_avg_time_elapsed_n_1000:<12} {bubble_avg_time_elapsed_n_2000:<12} {bubble_avg_time_elapsed_n_4000:<12} {bubble_avg_time_elapsed_n_6000:<12} {bubble_avg_time_elapsed_n_8000:<12} {bubble_avg_time_elapsed_n_10000:<12}")
-
+    '''
+    '''
     qs_avg_time_elapsed_n_100 = timer_function(quick_sort, 100)
     qs_avg_time_elapsed_n_250 = timer_function(quick_sort, 250)
     qs_avg_time_elapsed_n_500 = timer_function(quick_sort, 500)
@@ -364,7 +369,7 @@ if __name__ == '__main__':
     ts_avg_time_elapsed_n_8000 = timer_function(timsort, 8000)
     ts_avg_time_elapsed_n_10000 = timer_function(timsort, 10000)
     print(f"{'Timsort':<15} {ts_avg_time_elapsed_n_100:<12} {ts_avg_time_elapsed_n_250:<12} {ts_avg_time_elapsed_n_500:<12} {ts_avg_time_elapsed_n_750:<12} {ts_avg_time_elapsed_n_1000:<12} {ts_avg_time_elapsed_n_2000:<12} {ts_avg_time_elapsed_n_4000:<12} {ts_avg_time_elapsed_n_6000:<12} {ts_avg_time_elapsed_n_8000:<12} {ts_avg_time_elapsed_n_10000:<12}")
-
+    '''
     '''
     The following section has been commented out as not part of the project brief and it includes several libraries which aren't necessary as part of the project,
     but it demonstrates how data was collected into dataframes (with pandas) and chart's generated using seaborn libraries lineplot
